@@ -11,4 +11,16 @@ module.exports = {
     // Load a custom template (lodash by default)
     template: 'index.html'
   })],
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+    ],
+  },
 };
