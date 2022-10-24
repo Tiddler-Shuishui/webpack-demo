@@ -3,7 +3,7 @@ import gif from './images/1.gif'
 console.log(gif)
 const div = document.getElementById('app')
 div.innerHTML = `
- <img src=${gif}/> 
+ <img src=${gif}> 
 `
 const button = document.createElement('button')
 button.innerText = '懒加载'
