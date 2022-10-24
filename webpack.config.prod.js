@@ -1,8 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: ['./src/index.js'],
   output: {
     filename: '[name].[contenthash].bundle.js',
@@ -11,13 +12,16 @@ module.exports = {
     title: 'Custom template',
     // Load a custom template (lodash by default)
     template: 'index.html'
+  }),
+  new MiniCssExtractPlugin({
+    filename:'[name].[contenthash].css'
   })],
   module: {
     rules: [
       {
         test: /\.css$/i,
-        // use: [MiniCssExtractPlugin.loader, "css-loader"],
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        // use: ["style-loader", "css-loader"],
       },
     ],
   },
