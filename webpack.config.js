@@ -22,6 +22,24 @@ module.exports = {
           "sass-loader",
         ],
       },
+      {
+        test: /\.less$/i,
+        use: [
+          // compiles Less to CSS
+          "style-loader",
+          "css-loader",
+          "less-loader",
+        ],
+      },
+      {
+        test: /\.styl$/i,
+        use: [
+          // compiles Less to CSS
+          "style-loader",
+          "css-loader",
+          "stylus-loader",
+        ],
+      },
     ],
   },
 };
