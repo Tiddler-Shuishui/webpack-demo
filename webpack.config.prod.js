@@ -15,6 +15,16 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
         // use: ["style-loader", "css-loader"],
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader",
+        ],
+      },
     ],
   },
 };
